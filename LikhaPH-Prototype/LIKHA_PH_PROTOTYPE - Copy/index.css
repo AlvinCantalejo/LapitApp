@@ -1,0 +1,1737 @@
+/*
+#F7F1F0 - light
+#C3A6A0 - peach
+#A15C38 - brown
+#262220 - dark
+
+https://www.w3schools.com/howto/howto_js_topnav.asp
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/**Top navigation**/
+
+.topnav {
+  width: 100%;
+  height: 10%;
+}
+
+.topnav li {
+  list-style-type: none;
+}
+
+.topnav a {
+  float: right;
+  color: gray;
+  text-align: center;
+  padding: 30px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.topnav a:hover {
+  font-weight: bold;
+  color: black;
+}
+
+.margin{
+  margin-right: 50px;
+}
+
+/* style the container */
+.container{
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 30px;
+} 
+
+.logo {
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 36%;
+}
+
+.desc{
+  margin-left: 100px;
+  font-family: "Trebuchet MS";
+  margin-top: 40px;
+}
+
+.tagline{
+  font-weight: bold;
+  font-style: italic;
+  color: #A15C38;
+  margin-left: 100px;
+  font-family: "Trebuchet MS";
+  font-size: 20px;
+}
+
+.boxLogin{
+  background-color: #C3A6A0;
+  border-radius: 8px;
+  height: 380px;
+  width: 120%;
+  margin-top: 0px;
+}
+
+.boxRegistration{
+  background-color: #C3A6A0;
+  border-radius: 8px;
+  height: 107%;
+  width: 120%;
+  margin-top: 0px;
+  
+}
+
+/* Two-column layout */
+.col1 {
+  float: left;
+  width: 55%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 80px;
+}
+
+.col2Log{
+  float: right;
+  width: 30%;
+  padding: 0 50px;
+  margin-top: 100px;
+  margin-right: 200px;
+}
+
+.col2Reg{
+  float: right;
+  width: 30%;
+  padding: 0 50px;
+  margin-top: 60px;
+  margin-right: 200px;
+}
+
+
+/* style inputs and link buttons */
+input[type=text],input[type=password],input[type=name],input[type=email],input[type=phonenumber], .loginBtn{
+  width: 80%;
+  padding: 12px;
+  border-color: #C3A6A0 ;
+  border-radius: 8px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+input:hover{
+  opacity: 1;
+  border-color: #C3A6A0 ;
+}
+
+input[type=text]{
+  margin-top: 40px;
+}
+
+input[placeholder="Username"]{
+  margin-top: 0px;
+}
+
+/* style the submit button */
+.usingFB{
+  background-color: #506aa3;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 20px;
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.fb{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.usingFB:hover{
+  background-color: #5c77af;
+}
+
+.loginBtn{
+  background-color: #262220;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.loginBtn:hover {
+  background-color: #2c2826;
+}
+
+.registerHere{
+  cursor: pointer;
+  color: white;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.registerHere:hover {
+  color:  #262220;
+  font-weight: bold;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* horizontal line */
+.hl {
+  float: left;
+  width: 80%;
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.TC{
+  cursor: pointer;
+  color: #262220;
+  font-style: italic;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 0px;
+  font-size: 15px;
+}
+
+.TCbtn{
+  cursor: pointer;
+  color: #262220;
+  font-style: italic;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  font-size: 15px;
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+
+.TCbtn:hover{
+  color: #ffffff;
+}
+
+.modal_bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_TC{
+  background-color:#F7F1F0 ;
+  width: 30%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+  padding: 20px;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+h2{
+  margin-top: 0px;
+  color: #2c2826; 
+  text-align: center;
+}
+
+.details{
+  font-family: "Trebuchet MS";
+  font-size: 13px;
+  text-align: justify;
+  padding: 20px;
+  padding-top: 2%;
+  overflow: auto;
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 370px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*About.html | Feature.html*/
+
+.aboutUs{
+  margin-left: 150px;
+  margin-top: 80px;
+  margin-bottom: 15px;
+  font-size: 70;
+  font-family: "Trebuchet MS";
+  color: #262220;
+  font-weight: bold;
+}
+
+hr{
+  width: 80%;
+  align-self: center;
+  margin-bottom: 40px;
+  border: 1px solid #A15C38;
+}
+
+.team, .app{
+  margin-left: 150px;
+  font-size: 20px;
+  color: #262220;
+  margin-right: 150px;
+}
+
+.teamDesc, .appDesc{
+  margin-left: 150px;
+  font-size: 18px;
+  color: #262220;
+  text-align: justify;
+  margin-right: 150px;
+  margin-bottom: 50px;
+}
+
+.proPic{
+  width: 250px;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.col1ProPic{
+  float: left;
+  margin-left: 180px;
+  margin-right: 0px;
+}
+
+.col2Desc{
+  float: left;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+.col3ProPic{
+  float: left;
+  margin-left: 20px;
+}
+
+.col4Desc{
+  float: left;
+  margin-left: 20px;
+}
+
+.title{
+  color: #646262;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 3px;
+  margin-left: 0px;
+}
+
+.proTitle{
+  font-family: "Trebuchet MS";
+  margin-top: 0px;
+  margin-bottom: 30px;
+  width:250px;
+  font-size: 15px;
+}
+
+.back{
+  margin-left: 150px;
+  background-color: white;
+  color: #262220;
+  border: none;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+
+/*HomePage.html*/
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #C3A6A0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #262220;
+  display: block;
+  padding-left: 40px;
+  margin-top: 30px;
+}
+
+.homeLogo{
+  align-self: center;
+  padding: 50px 50px 50px 25px;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenavRight a {
+  padding: 15px;
+  width: 60px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  position: fixed;
+}
+
+.containerHome {
+  margin-left: 160px; 
+  padding: 20px;
+}
+
+.dropdown{
+  color: #262220;
+  margin-left: 130px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 310px;
+  
+}
+
+.dropdown select, option{
+  border: 0;
+  background-color: white;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 20px;
+  font-size: 15px;
+  width: 70%;
+  cursor: pointer;
+}
+
+.go{
+  background-color: #262220 ;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+  margin-left: 450px;
+}
+
+.storeNearby{
+  margin-left: 130px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 50;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #262220;
+  font-weight: bold;
+}
+
+/*Home Page Collapsible*/
+.listScroll{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  text-align: justify;
+  overflow: auto;
+}
+
+/*Scroll Design*/
+::-webkit-scrollbar {width: 10px;}
+::-webkit-scrollbar-track { background: #f1f1f1;}
+::-webkit-scrollbar-thumb {background: #888;}
+::-webkit-scrollbar-thumb:hover {background: #555;}
+
+.collapsible {
+  border: 3px solid black;
+  opacity: .90;
+  color: #262220;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  width: 85%;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  margin-left: 130px;
+  font-weight: normal;
+  overflow: auto;
+}
+
+.collapsible button{
+  border: 3px solid black;
+}
+
+.collapsible:hover {
+  background-color: #afaeae;
+}
+
+.contentCollapsible {
+  padding: 0 18px;
+  display: none;
+  margin-left: 130px;
+  width: 85%;
+  overflow: auto;
+}
+
+.contentCollapsible p{
+  margin-left: 20px;
+  font-size: 17px;
+}
+
+.contentCollapsible a{
+  float: right;
+  font-size: 15px;
+  font-style: italic;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #646262;
+}
+
+.contentCollapsible a:hover{
+  color: #000000;
+}
+
+.storeName{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 30px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.storeDesc{
+  margin-top: 0px;
+  font-size: 15px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Home Page Modals*/
+
+.account{
+  top: 10px;
+  right: 30px;
+}
+
+.cartHome {
+  top: 650px;
+  background-color: #C3A6A0;
+  right: 0px;
+  border-radius: 10px 0 0 10px;
+}
+
+.cartStore {
+  top: 30px;
+  background-color: #C3A6A0;
+  right: 0px;
+  border-radius: 10px 0 0 10px;
+}
+
+.placeOrder{
+  background-color: #262220;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 185px;
+  border-radius: 5px;
+  position: fixed;
+  margin-top: 400px;
+}
+
+.placeAppointment{
+  background-color: #262220;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 170px;
+  border-radius: 5px;
+  position: fixed;
+  margin-top: 400px;
+}
+
+.chat {
+  top: 680px;
+  background-color: #C3A6A0;
+  border-radius: 50%;
+  right: 30px;
+}
+
+.imgSend {
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+.imgCart{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.imgAccount{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.chat .badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  
+}
+
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 32;
+  right: 15px;
+  border: 3px solid #C3A6A0;
+  z-index: 9;
+  border-radius: 5%;
+  background-color: #C3A6A0;
+  width: 20%;
+  height: 65%;
+  padding: 10px;
+  margin-right: 30px;
+}
+
+.account-popup {
+  display: none;
+  position: fixed;
+  top: 45;
+  right: 50px;
+  border: 3px solid #C3A6A0;
+  z-index: 9;
+  border-radius: 5%;
+}
+
+.accountInfo{
+  text-align: center;
+  margin-top: 0px;
+}
+
+.imgProfile{
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.contChat{
+  max-width: 300px;
+  padding: 10px;
+  background-color:#C3A6A0;
+  border-radius: 5%;
+}
+
+.padding{
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 75%;
+  overflow: auto; 
+  overflow-x: hidden;
+  padding: 5%;
+}
+
+.padding1{
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 73%;
+  overflow: auto; 
+  overflow-x: hidden;
+  padding: 5%;
+}
+
+
+.contAccount{
+  width: 300px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5%;
+}
+
+.pic{
+  width:13px;
+  height: 13px;
+  background-color: wheat;
+  border-radius: 50%;
+}
+
+.msg{
+  margin-top: 0px;
+  background-color:#f1f1f1 ;
+  width: 80%;
+  padding: 10px;
+  font-size: 12px;
+  font-family: cursive;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.msg .badge1{
+  position: absolute;
+  left: -15px;
+  bottom: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.time{
+  color: #646262;
+  font-style: italic;
+  font-size: 10px;
+  margin-bottom: 0px;
+  margin-top: 50px;
+}
+
+
+.chat-popup textarea {
+  width: 84%;
+  padding: 10px;
+  border: none;
+  background: #f1f1f1;
+  min-height: 10px;
+  border-radius: 5px 0 0 5px ;
+  margin-top: 0px;
+}
+
+.chat-popup textarea[name="msg"] {
+  width: 83%;
+  padding: 10px;
+  border: none;
+  background: #f1f1f1;
+  min-height: 10px;
+  border-radius: 5px 0 0 5px ;
+  margin-top: 0px;
+}
+
+.btnSend {
+  background-color:#A15C38;
+  cursor: pointer;
+  width: 40px;
+  height: 50px;
+  float: right;
+  border-radius: 0 5px 5px 0;
+}
+
+.send{
+  width: 20px;
+  height: 25px;
+  margin-left: 9px;
+  margin-top: 11px;
+}
+
+.contChat .btnSend .btnCancel:hover {
+  opacity: 1;
+}
+
+.btnClose{
+  float: right;
+  color: gray;
+  font-style: italic;
+  font-family:Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+.prev {
+  margin-left: 130px;
+  margin-top: 50px;
+  background-color: white;
+  color: #262220;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.list{
+  padding-bottom: 20px;
+  margin-left: 120px;
+}
+.name{
+  margin-left: 130px;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  font-size: 50;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #262220;
+  font-weight: bold;
+}
+
+.desc{
+  color: #A15C38;
+  font-style: italic;
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+.descLogin{
+  color: #000000;
+  font-size: 16px;
+  margin-left: 100px;
+  font-family: "Trebuchet MS";
+  margin-top: 40px;
+}
+
+.storeInfo{
+  color: gray;
+  font-style: italic;
+  margin-top: 0px;
+  font-size: 15px;
+}
+
+.item{
+  margin-bottom: 10px;
+  background-color: #F7F1F0;
+  border: 1px solid #F7F1F0;
+  border-radius: 5px;
+  width: 85%;
+  height: 130px;
+  margin-left: 130px;
+  cursor: pointer;
+}
+
+.column{
+  float: left;
+}
+
+.column3 a{
+  float: left;
+}
+
+.itemName{
+  color: #47525E;
+  font-family: Lato;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left:10px;
+  margin-bottom: 0px;
+}
+
+.price{
+  color: #47525E;
+  font-family: Lato;
+  font-size: 20px;
+  margin-left:10px;
+  margin-top: 5px;
+}
+
+.prod1, .prod2, .prod3{
+  width: 230px;
+  height: 130px;
+  padding: 10px;
+}
+
+.modal_1, .modal_2, .modal_3{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  background-color: rgba(0,0,0,.5);
+  z-index: 9;
+}
+
+.modal_item1, .modal_item2{
+  background-color:#F7F1F0;
+  width: 35%;
+  height: 65%;
+  flex-direction: column;
+  margin: auto;
+  padding: 30px;
+  padding-left: 35px;
+  z-index: 9;
+  border-radius: 5%;
+  margin-top: 120px;
+}
+
+.modal_cart{
+  background-color:#F7F1F0;
+  width: 36%;
+  height: 100%;
+  flex-direction: column;
+  float: right;
+  margin: auto;
+  padding: 10px;
+  padding-left: 35px;
+  z-index: 9;
+}
+
+.modal_cart hr{
+  width: 95%;
+}
+
+.cartItemList hr{
+  margin-bottom: 0px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.cartClose{
+  float: left;
+  color: gray;
+  font-style: italic;
+  font-family:Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+
+.nameModal{
+  color:#262220;
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 25px;
+}
+
+.nameCart{
+  color:#262220;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.infoModal{
+  color: #A15C38;
+  font-style: italic;
+  margin-top: 10px;
+  font-family: "Trebuchet MS";
+}
+
+.priceModal{
+  font-size: 35px;
+  font-weight: 700;
+  font-family:Lato;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.variationModal, .quantity{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top:0px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #646262;
+}
+
+.quantity{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 50px;
+  font-size: 13px;
+  color: #646262;
+}
+
+.quantity input[type="time"]{
+  width: 150px;
+}
+
+.sub, .add{
+  margin-top: 20px;
+  background-color: #dbdbdb;
+  text-decoration: none;
+  border: none;
+  color: black;
+  padding: 8px 13px;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.add, .qty{
+  margin-left: 20px;
+}
+
+.qty{
+  color: black;
+}
+
+.sub:hover, .add:hover{
+  text-decoration: none;
+  border: none;
+  opacity: .50;
+}
+
+.variationModal select{
+  border: 0;
+  background-color: F7F1F0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 20px;
+  font-size: 15px;
+  width: 80%;
+}
+
+.variationModal option{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+
+.variationModala select{
+  border: 0;
+  background-color: F7F1F0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  width: 200px;
+}
+
+.variationModala option{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+
+.variationModala label{
+  color: #555;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.addToCart {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:145px;
+  margin-top: 00px;
+  cursor: pointer;
+}
+
+.addAppointment {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:127px;
+  margin-top: 00px;
+  cursor: pointer;
+}
+
+.c1 a, .c2 a{
+  width: 15%;
+  float: left;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+.totalCol1{
+  float: left;
+  width: 40%;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.totalCol2 {
+  width: 40%;
+  margin-left: 200px;
+  font-size: 30px;
+}
+
+.totalPriceRow{
+  margin-top: 0px;
+}
+
+.imgMinus{
+  width:20px;
+  height: 20px;
+  margin-top: 45px;
+}
+
+.imgProd1{
+  width: 130px;
+  height: 110px;
+  margin-left: 10px;
+}
+
+.itemCartInfo{
+  margin-left: 10px;
+}
+
+.itemCartInfo em{
+  color: #555;
+}
+
+.itemCartInfo strong{
+  color:#262220;
+}
+
+.c4{
+  margin-left: 50px;
+}
+
+.cartItemList{
+  overflow: auto;
+}
+
+.column1{
+  float: left;
+  width: 280px;
+  margin-right: 0px;
+  margin-top: 50px;
+}
+
+.column1b, .column2b{
+  float: left;
+  width: 300px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+.column2, .column2a{
+  margin-top: 50px;
+}
+
+.column2a select{
+  width:160px;
+}
+
+.rowCart{
+  display: flex;
+  margin-top: 250px;
+  position: fixed;
+}
+.row, .createStoreRow1, .createStoreRow2, .addItemRow1, .addItemRow2, .cartRowA, .totalPriceRow{
+  display: flex;
+} 
+
+/*CreateStore.html*/
+.description input{
+  margin-top: 3px; 
+  margin-left: 135px;
+  
+}
+
+.short{
+  margin-top: 3px; 
+  margin-left: 140px;
+  color: gray;
+  font-style: italic;
+  font-size: 13px;
+}
+
+textarea[name="Short Description"]{
+  min-height: 160px;
+  margin-left: 135px;
+  width: 400px;
+  border-color: #C3A6A0 ;
+  border-radius: 8px;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 12px;
+  margin-bottom: 2px;
+}
+
+.chkDeliveryOption, .chkPaymentOption{
+  margin-left: 110px;
+  margin-top: 40px;
+}
+
+.box {
+position: relative;
+padding-left: 35px;
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 20px;
+}
+
+.box input, .withVar input {
+position: absolute;
+opacity: 0;
+}
+
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;
+background-color: #eee;
+}
+
+.box:hover input ~ .checkmark, .withVar:hover input ~ .checkmark  {
+background-color: #ccc;
+}
+
+.box input:checked ~ .checkmark, .withVar input:checked ~ .checkmark {
+background-color: #2196F3;
+}
+
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+.box input:checked ~ .checkmark:after, .withVar input:checked ~ .checkmark:after {
+display: block;
+}
+
+.box .checkmark:after, .withVar .checkmark:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+.createStoreColumn1, 
+.createStoreColumn2, 
+.createStoreColumn3,
+.addItemColumn1, 
+.addItemColumn2,  
+.addItemColumn3,
+.addItemColumn4,
+.addItemColumn5  {
+  float: left;
+}
+
+.create{
+  background-color: #262220 ;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  margin-right: 80px;
+  margin-top: 60px;
+  float: right;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+  .container, .containerHome {
+    width: 100%;
+    display: block;
+  }
+}
+
+/*My Store.html*/
+.sName{
+  margin-left: 130px;
+  font-size: 70px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#262220;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  width: 80%;
+  border-bottom: 2px solid #A15C38;
+}
+
+.myStoreInfo{
+  color: black;
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.msgSellerView1{
+  margin-top: 0px;
+  background-color:#f1f1f1 ;
+  width: 90%;
+  font-size: 12px;
+  padding: 10px;
+  font-family: cursive;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.msgSellerView3{
+  margin-top: 0px;
+  background-color:#f1f1f1 ;
+  width: 90%;
+  font-size: 12px;
+  padding: 10px;
+  font-family: cursive;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.msgSellerView3 .badgeSellerView1{
+  position: absolute;
+  left: -15px;
+  bottom: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.msgSellerView1 .badgeSellerView1{
+  position: absolute;
+  left: -15px;
+  bottom: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.timeSellerView1{
+  color: gray;
+  font-style: italic;
+  font-size: 10px;
+  margin-bottom: 0px;
+}
+
+.timeSellerView3{
+  color: gray;
+  font-style: italic;
+  font-size: 10px;
+  margin-bottom: 0px;
+}
+
+.msgSellerView{
+  margin-top: 0px;
+  background-color:#f1f1f1 ;
+  width: 85%;
+  font-size: 12px;
+  padding: 10px;
+  font-family: cursive;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.msgSellerView .badgeSellerView{
+  position: absolute;
+  right: -15px;
+  bottom: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.timeSellerView{
+  color: gray;
+  font-style: italic;
+  font-size: 10px;
+  margin-bottom: 0px;
+  margin-left: 155px;
+}
+
+.timeSellerView2{
+  color: gray;
+  font-style: italic;
+  font-size: 10px;
+  margin-bottom: 0px;
+  margin-left: 140px;
+  margin-top: 45px;
+}
+
+.msgSellerView2{
+  margin-top: 0px;
+  background-color:#f1f1f1 ;
+  width: 85%;
+  font-size: 12px;
+  padding: 10px;
+  font-family: cursive;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 35px;
+}
+
+.msgSellerView2 .badgeSellerView{
+  position: absolute;
+  right: -15px;
+  bottom: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.hide1,.hide2,.hide3,.hide4, .hide5, .hide6, .hide7, .hide8 {
+  display: none;
+}
+
+.hover1:hover + .hide1{
+  display: block;
+  color: gray;
+  font-style: italic;
+  float: right;
+  margin-top: 690px;
+  margin-right: 100px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.hover2:hover + .hide2{
+  display: block;
+  color: gray;
+  font-style: italic;
+  float: right;
+  margin-top: 308px;
+  margin-right: 200px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.edit {
+  top: 300px;
+  right: 150px;
+}
+
+.hover3:hover + .hide3{
+  display: block;
+  color: gray;
+  font-style: italic;
+  margin-top: 357px;
+  margin-right: 200px;
+  float: right;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.view {
+  top: 350px;
+  right: 150px;
+}
+
+.hover4:hover + .hide4{
+  display: block;
+  color: gray;
+  font-style: italic;
+  float: right;
+  margin-top: 407px;
+  margin-right: 200px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.plus {
+  top: 400px;
+  right: 150px;
+}
+
+.imgAdd, .imgView, .imgEdit {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+.descStore{
+  margin-left: 100px;
+  font-family: "Trebuchet MS";
+  margin-top: 0px;
+  font-size: 28px;
+  color: #A15C38;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+/*AddItem.html*/
+.align {
+  margin-left: 130px;
+}
+
+.addImage{
+  width: 230px;
+  height: 180px;
+}
+
+input[ name="Item name"]{
+  width:93%;
+  margin-top: 0px;
+}
+
+.shortD{
+  margin-left: 40px;
+  color: gray;
+  font-style: italic;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+textarea[name="sdescription"]{
+  min-height: 70px;
+  margin-left: 40px;
+  width: 500px;
+  border-color: #C3A6A0 ;
+  border-radius: 8px;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 12px;
+}
+
+.withVar {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 50px;
+  color: gray;
+  }
+
+.addItemRow2{
+  display: none;
+  margin-left: 100px;
+}
+
+.addVariation label, .addPrice label{
+  margin-left: 45px;
+  margin-bottom: 0px;
+  color: #646262;
+}
+
+input[name="var1"], input[name="price1"], input[name="addPrice"]{
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.addVar{
+  height: 30px;
+  margin-top: 47px;
+}
+
+.deleteVar{
+  height: 28px;
+}
+
+.addItemRow3{
+  display:table-row;
+  float: left;
+  margin-left: 140px;
+}
+
+.addItemRow3 label {
+  float: left;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-left: 40px;
+}
+
+.addItem{
+  background-color: #262220 ;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.fixedButton{
+  position: fixed;
+  margin-top: 180px;
+  margin-left: 1000px;
+}
+
+.hover5:hover + .hide5{
+  display: block;
+  position: fixed;
+  color: white;
+  background-color: dimgray;
+  border-radius: 5px;
+  padding: 3px;
+  font-style: italic;
+  float: right;
+  top: 175px;
+  right:140px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.hover6:hover + .hide6{
+  display: block;
+  position: fixed;
+  color: white;
+  background-color: dimgray;
+  border-radius: 5px;
+  padding: 3px;
+  font-style: italic;
+  float: right;
+  top: 210px;
+  right:140px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.hover7:hover + .hide7{
+  display: block;
+  position: fixed;
+  color: white;
+  background-color: dimgray;
+  border-radius: 5px;
+  padding: 3px;
+  font-style: italic;
+  float: right;
+  top: 315px;
+  right:140px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.hover8:hover + .hide8{
+  display: block;
+  position: fixed;
+  color: white;
+  background-color: dimgray;
+  border-radius: 5px;
+  padding: 3px;
+  font-style: italic;
+  float: right;
+  top: 350px;
+  right:140px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.editImg1 {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.deleteImg1 {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.editItem1 {
+  margin-left: 480px;
+}
+
+.deleteItem1 {
+  margin-left: 480px;
+}
+
+.editImg2 {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.deleteImg2 {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.editItem2 {
+  margin-left: 400px;
+}
+
+.deleteItem2 {
+  margin-left: 400px;
+}
+
+.itemView{
+  margin-bottom: 10px;
+  background-color: #F7F1F0;
+  border: 1px solid #F7F1F0;
+  border-radius: 5px;
+  width: 85%;
+  height: 130px;
+  margin-left: 130px;
+}
