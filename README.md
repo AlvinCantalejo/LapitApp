@@ -2,7 +2,7 @@
 Good day! Likha PH Developers came up with two versions of the project for the Diliman Solutions Challenge 2021
 
 #FIRST VERSION (AlvinCantalejo/LapitApp/LikhaPH-Prototype)
-  1st Version is designed to emphasize High Fidelity Mock-ups as well as the user-friendly prototype. It is made for the demo video and mock
+  1st Version is designed to emphasize High Fidelity Mock-ups as well as the user-friendly prototype. It is made for the demo video and AVP purpose.
   To compile and run the project, down the LikhaPH-Prototype Folder and open it on any IDE with Live Server extension. Use the index.html as the first page.
         
 #SECOND VERSION (AlvinCantalejo/LapitApp/LapitApp(Final version))
