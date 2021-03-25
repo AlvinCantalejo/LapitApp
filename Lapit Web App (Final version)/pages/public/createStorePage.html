@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/style.css">
+    <title>Lapit | Create Store</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <img  src="/resources/logo.png" class="homeLogo" alt="logo"><br><br>
+        <a href="homePage.html">Store Nearby</a>
+        <a href="createStorePage.html">Create Store</a>
+        <br><br><br><br><br><br><br><br><br><br>
+        <a id ="logout">Logout</a>
+      </div>
+
+
+    <!--Create Store Content-->
+    <div class="containerHome"><br>
+        <p class="name"><strong>Create Store</strong></p><br>
+    <form id="create-store-form">
+        <div class = "createStoreRow1">
+            <div class = "createStoreColumn1">
+                <p class="description">
+                    <input type="name" name="name" placeholder="Store name" required>
+                    <input type="text" name="location" placeholder="Location" required>
+                    <input type="text" name="hours" placeholder="Store hours" required>
+                </p>
+            </div>
+
+            <div class = "createStoreColumn2">
+                <div class="row">
+                    <div class=column1>
+                      <p class="dropdown">
+                        <label for="Category">Category:</label><br>
+                        <select name="category" id="category"> 
+                        </select>
+                      </p>
+                    </div>
+                    <div class=column2>
+                      <p class="dropdown">
+                        <label for="Type">Type:</label><br>
+                        <select name="type" id="type">
+                        </select>
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "createStoreRow2">
+
+            <div class = "createStoreColumn3">
+                <p class="description">
+                    <p class="short">short description</p>
+                    <textarea type="text" name="description" placeholder="Freshly baked everyday" required></textarea>
+                </p>
+            </div>
+
+            <div class = "createStoreColumn4">
+                <div class="chkDeliveryOption">
+                    <h4>Delivery Option</h4>
+                    <label class="box">
+                        <input name="meetup" id="meetup" type="checkbox">
+                        <span class="checkmark"></span>
+                        Meet Up &nbsp;&nbsp;&nbsp;<br><br>
+                    </label>
+                    <label class="box">
+                        <input name="pickup" id="pickup" type="checkbox">
+                        <span class="checkmark"></span>
+                        Pick Up &nbsp;&nbsp;<br><br>
+                    </label>
+                    <label class="box">
+                        <input name="delivery" id="delivery" type="checkbox">
+                        <span class="checkmark"></span>
+                        Delivery
+                    </label>
+                </div>
+            </div>
+
+            <div class = "createStoreColumn5">
+                <div class="chkPaymentOption">
+                    <h4>Payment Option</h4>
+                    <label class="box">
+                        <input name="cashondelivery" id="cashondelivery"  type="checkbox">
+                        <span class="checkmark"></span>
+                        Cash on Delivery &nbsp;&nbsp;&nbsp;<br><br>
+                    </label>
+                    <label class="box">
+                        <input name="gcash" id="gcash" type="checkbox">
+                        <span class="checkmark"></span>
+                        GCash &nbsp;&nbsp;<br><br>
+                    </label>
+                    <label class="box">
+                        <input name="paymaya" id="paymaya" type="checkbox">
+                        <span class="checkmark"></span>
+                        Pay Maya
+                    </label>
+                </div>        
+            </div>
+        </div>
+        <button type="submit"  href="" class="create">Create</button>
+    </form>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyAtRhbVeAGAbcgf5b6eztEBnnupKcoS1iI",
+          authDomain: "likhaph-523e0.firebaseapp.com",
+          projectId: "likhaph-523e0",
+          storageBucket: "likhaph-523e0.appspot.com",
+          messagingSenderId: "703907203746",
+          appId: "1:703907203746:web:a0cfbc0e70188a360aa5fb"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      //auth and firestore constants
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      db.settings({ timestampsInSnapshots: true});
+  </script>
+<script src="/scripts/createStore.js"></script>
+</body>
+</html>

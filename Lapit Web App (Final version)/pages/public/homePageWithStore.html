@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/style.css">
+  
+    <title>Lapit | Home Page</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+  <div class="sidenav">
+    <img  src="/resources/logo.png" class="homeLogo" alt="logo"><br><br>
+    <a href="homePageWithStore.html">Store Nearby</a>
+    <a href="myStorePage.html">My Store</a>
+    <br><br><br><br><br><br><br><br><br><br>
+    <a id ="logout">Logout</a>
+  </div>
+
+  <div class="sidenavRight">
+    <a class="account" onclick="openChat()"><img  src="/resources/account.png" class="imgAccount" alt="logo"></a>
+    <a class="cartHome" onclick="openCart()"><img  src="/resources/cart.png" class="imgCart" alt="logo"></a>
+  </div>
+
+  <!--
+    FOR NOTIFICATION (END-SELLER)
+    <span><img  src="send.png" class="imgSend" alt="logo"></span><span class="badge">3</span>-->
+
+<!--Account Modal-->
+<div class="modal_Account" id="modal_Account">
+  <div class="account-popup" id="account-popup">
+    <div class="contAccount">
+      <a class="btnClose" onclick="closeForm()">x</a><br>
+      <h2>&nbsp;&nbsp;&nbsp;Account Profile</h2>
+      <div class="accountInfo" >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Store nearby container-->
+<div class="containerHome">
+  <p class="storeNearby"> Stores nearby</p>
+  <div class="row">
+    <div class=column1>
+      <p class="dropdown">
+        <label for="Category">Category:</label><br>
+        <select name="Category" id="category"> 
+        </select>
+      </p>
+    </div>
+    <div class=column2>
+      <p class="dropdown">
+          <label for="Type">Type:</label><br>
+          <select name="Type" id="type">
+          </select>
+      </p>
+    </div>
+    <div class=column3>
+      <br><br><br>
+      <a id="listByCategory" class="go">Go</a>
+    </div>
+  </div>
+ 
+  <!-- DISPLAY STORES LOCATION -->
+    <div id="listScroll" class ="listScroll">
+    </div>
+   
+<!--Message Modal-->
+      <div class="modal_Msg" id="modal_Msg">
+        <div class="chat-popup" id="chat-popup">
+          <div class="cont">
+          <br><h2>Chat</h2>
+          <textarea placeholder="Type message.." name="msg" required></textarea>
+          <button type="submit" class="btnSend">Send</button>
+          <button type="button" class="btnCancel" onclick="closeForm()">Close</button>
+          </div>
+        </div>
+      </div> 
+  
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyAtRhbVeAGAbcgf5b6eztEBnnupKcoS1iI",
+          authDomain: "likhaph-523e0.firebaseapp.com",
+          projectId: "likhaph-523e0",
+          storageBucket: "likhaph-523e0.appspot.com",
+          messagingSenderId: "703907203746",
+          appId: "1:703907203746:web:a0cfbc0e70188a360aa5fb"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      //auth and firestore constants
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      db.settings({ timestampsInSnapshots: true});
+  </script>
+
+
+
+<script>
+  function openChat() {
+    document.getElementById("account-popup").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("account-popup").style.display = "none";
+  }
+
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
+<script src="/scripts/home.js"></script>
+</body>
+</html>
