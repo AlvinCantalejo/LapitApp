@@ -17,4 +17,4 @@ Good day! Likha PH Developers came up with two versions of the project for the D
   
  You may check the live website here : https://likhaph-523e0.web.app/
  
- FOR OTHER PROJECT SPECIFICATIONS, PLEASE CHECK THIS LINK https://tinyurl.com/LapitAppDocumentation
+ SEE OTHER PROJECT DOCUMENTATION HERE: https://tinyurl.com/LapitAppDocumentation
