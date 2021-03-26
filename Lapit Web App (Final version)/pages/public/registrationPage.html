@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/style.css">
+    <title>Lapit | Registration</title>
+</head>
+
+<body>
+  <nav>
+    <div class="topnav">
+      <div class="margin">
+        <ul>
+          <li class="logged-out">
+            <a href="/featuresPage.html" data-target="feature">Feature</a>
+          </li>
+          <li class="logged-out">
+            <a href="/aboutPage.html"  data-target="about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+ </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col1"> <!-- left side-->
+        <img  src="/resources/logo.png" class="logo" alt="logo">
+        <p class="desc">Create an online website for your business. 
+          <br/>See products and services near you. Shopping is fast, 
+          easy and closer to you!</p>
+        <p class="tagline"><q>Lahat ng hanap mo, nasa maLAPIT lang yan!</q></p>  
+      </div>
+
+      <div class="col2Reg"> <!-- right side-->
+        <div class="boxRegistration">
+          <br><br>
+          <a href="" class="usingFB" onclick="signinWithFacebook()"><img  src="/resources/fb.png" class="fb" alt="logo">&nbsp;Login using Facebook</a>
+          <p class="hl">or</p>
+            <form id="signup-form">
+                <input type="name" id="signup-fullname" placeholder="Full Name" required />
+                <input type="email" id="signup-email" placeholder="Email Address" required />
+                <input type="password" id="signup-password" placeholder="Password" required />
+                <button class="loginBtn">SIGN UP</button>
+            </form>
+            <p class="hl"></p>
+            <br><p class="TC">By clicking SIGN UP, you agree to our</p><p class="TCbtn" onclick="openTC()">Terms and Conditions.</p>
+            <br><br><a href="index.html" class="registerHere">Login here.</a> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- TERMS AND CONDITION MODAL -->
+  <div class="modal_bg" id="modal_bg">
+    <div class="modal_TC" id="modal_TC">
+      <a class="close" onclick="closeTC()">x</a>
+      <h2>Terms and Condition</h2>
+      <div class="details">BY USING LAPIT APPLICATION OR OPENING AN ACCOUNT, 
+        YOU GIVE YOUR IRREVOCABLE ACCEPTANCE OF AND CONSENT TO THE TERMS OF
+        THIS AGREEMENT, INCLUDING THOSE ADDITIONAL TERMS AND CONDITIONS AND
+        POLICIES REFERENCED HEREIN AND/OR LINKED HERETO. <br><br>
+
+        IF YOU DO NOT AGREE TO THESE TERMS, PLEASE DO NOT USE OUR SERVICES
+        OR ACCESS THE SITE. IF YOU ARE UNDER THE AGE OF 18 OR THE LEGAL AGE
+        FOR GIVING CONSENT HEREUNDER PURSUANT TO THE APPLICABLE LAWS IN 
+        YOUR COUNTRY (THE “LEGAL AGE”), YOU MUST GET PERMISSION FROM A PARENT 
+        OR LEGAL GUARDIAN TO OPEN AN ACCOUNT AND THAT PARENT OR LEGAL GUARDIAN 
+        MUST AGREE TO THE TERMS OF THIS AGREEMENT. IF YOU DO NOT KNOW WHETHER 
+        YOU HAVE REACHED THE LEGAL AGE, OR DO NOT UNDERSTAND THIS SECTION, 
+        PLEASE DO NOT CREATE AN ACCOUNT UNTIL YOU HAVE ASKED YOUR PARENT OR 
+        LEGAL GUARDIAN FOR HELP. IF YOU ARE THE PARENT OR LEGAL GUARDIAN OF
+        A MINOR WHO IS CREATING AN ACCOUNT, YOU MUST ACCEPT THE TERMS OF THIS
+        AGREEMENT ON THE MINOR'S BEHALF AND YOU WILL BE RESPONSIBLE FOR ALL 
+        USE OF THE ACCOUNT OR COMPANY SERVICES USING SUCH ACCOUNT, WHETHER SUCH 
+        ACCOUNT IS CURRENTLY OPEN OR CREATED LATER.<br><br>
+
+
+        <strong>1.INTRODUCTION<br><br></strong>
+
+        <strong>1.1</strong> Welcome to the LAPIT platform (the "Site"). Please read 
+              the following Terms and Conditions carefully before using this Site or 
+              opening a Lapit account ("Account") so that you are aware of your
+              legal rights and obligations. Any new features added to or augmenting
+              the Services are also subject to these Terms and Conditions. 
+              These Terms and Conditions govern your use of  Services provided by Lapit.<br><br>
+
+        <strong>1.2</strong> Before becoming a User of the Site, you must read and accept all of the 
+        terms and conditions in, and linked to, these Terms of Service and you must consent 
+        to the processing of your personal data as described in the Privacy Policy linked hereto.<br><br>
+
+        <strong>1.3</strong> Lapit reserves the right to change, modify, suspend or discontinue all
+         or any part of this Site or the Services at any time or upon notice as required by 
+         local laws. Lapit may also impose limits on certain features or restrict your 
+         access to parts of, or the entire, Site or Services in its
+        sole discretion and without notice or liability.<br><br>
+                
+              
+        <strong>2.PRIVACY<br><br></strong>
+              
+            
+          
+        <strong>2.1</strong> Your privacy is very important to us at Lapit.
+        By using the Services or providing information on the Site, you: <br><br>
+
+        i.Consent, use, disclosure and/or processing of your Content, personal 
+        data and User Information as described in the Privacy Policy;<br><br>
+
+        ii.agree and acknowledge that the proprietary rights of your User
+         Information are jointly owned by you and Lapit; and<br><br>
+ 
+        iii.shall not, whether directly or indirectly, disclose your User 
+        Information to any third party, or otherwise allow any third party 
+        to access or use your User Information, without Lapit’s prior written consent.<br><br>
+          
+        <strong>2.2</strong> Users in possession of another User’s personal data through
+        the use of the Services (the “Receiving Party”) hereby agree that, they will (i)
+        comply with all applicable personal data protection laws with respect to any 
+        such data; (ii) allow the User whose personal data the Receiving Party has
+        collected (the “Disclosing Party”) to remove his or her data so collected 
+        from the Receiving Party’s database; and (iii) allow the Disclosing Party to 
+        review what information have been collected about them by the Receiving Party,
+        in each case of (ii) and (iii) above, in compliance with and where required by
+        applicable laws.
+      </div>
+    </div>
+  </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyAtRhbVeAGAbcgf5b6eztEBnnupKcoS1iI",
+          authDomain: "likhaph-523e0.firebaseapp.com",
+          projectId: "likhaph-523e0",
+          storageBucket: "likhaph-523e0.appspot.com",
+          messagingSenderId: "703907203746",
+          appId: "1:703907203746:web:a0cfbc0e70188a360aa5fb"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      //auth and firestore constants
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      db.settings({ timestampsInSnapshots: true});
+  </script>
+<script src="/scripts/registration.js"></script>
+</body>
+</html>
+
