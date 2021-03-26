@@ -1,0 +1,258 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/style.css">
+    <title>Lapit | Store Items</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+  <div class="sidenav">
+    <img  src="/resources/logo.png" class="homeLogo" alt="logo"><br><br>
+    <a href="/homePage.html">Store Nearby</a>
+    <a href="/createStorePage.html">Create Store</a>
+    <br><br><br><br><br><br><br><br><br><br>
+    <a href="index.html">Logout</a>
+  </div>
+
+  <div class="sidenavRight">
+    <a class="cartStore" onclick="openCart()"><img  src="/resources/cart.png" class="imgCart" alt="logo"></a>
+    <a class="chat" onclick="openChat()"><span><img  src="/resources/send.png" class="imgSend" alt="logo"></span><span class="badge">1</span></a>
+  </div>
+
+  <!--Cart Modal-->
+    <div class="modal_3" id="modal_3">
+      <div class="modal_cart" id="modal_cart">
+        <div class="container_cart">
+          <a class="cartClose" onclick="closeCart()"><i class="arrow down"></i></a>
+          <p class = "nameCart">MY CART</p>
+          
+          <div class="cartItemList">
+            <div class="cartRowA">
+              <div class="c1">
+                <a href=""><img  src="/resources/minus.png" class="imgMinus" alt="logo"></a>
+              </div>
+              <div class="c2">
+                <img  src="/resources/prod1.jpg" class="imgProd1" alt="logo"></a>
+              </div>
+              <div class="c3">
+                <p class="itemCartInfo">
+                  <strong>Quantity: 2</strong><br><br>
+                  <em>Ube Cheese Pandesal<br>Pack A (5pcs)
+                  </em>
+                </p>
+              </div>
+              <div class="c4">
+                <p class="itemCartInfo">
+                  <strong>&#8369; 150</strong>
+                </p>
+              </div>
+            </div><hr>
+            <div class="totalPriceRow">
+              <div class="totalCol1">
+                <p class="totalPrice">TOTAL: </p>
+              </div>
+              <div class="totalCol2">
+                <p class="totalPrice"> &#8369; 150 </p>
+              </div>
+            </div>
+          </div>
+         
+          <div class="rowCart">
+            <div class="column1">
+              <p class="variationModala"> 
+                <label for="Variation">mode of payment</label><br>
+                <select name="Variation" id="Variation">
+                  <option value="P5">Cash-on-delivery</option>
+                  <option value="P10">GCash</option>
+                  <option value="P10">PayMaya</option>
+                </select>
+              </p>
+            </div>
+            <div class="column2a">
+              <p class="variationModala"> 
+                <label for="Variation">mode of delivery</label><br>
+                <select name="Variation" id="Variation">
+                  <option value="P5">Meet Up</option>
+                  <option value="P10">Door-to-door</option>
+                </select>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <a href="/storeItemsPage.html" class="placeOrder">Place Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!--Message Modal-->
+    <div class="modal_Msg" id="modal_Msg">
+      <div class="chat-popup" id="chat-popup">
+        <div class="contChat">
+         <a class="btnClose" onclick="closeForm()">x</a>
+         <br><h2>Chat</h2>
+         <div class="padding"><br>
+            <p class="time">Today 8:30am</p>
+            <p class="msg">
+                <span>Thank you for visiting Treats by Hanna. Add to cart now!</span>
+                <span class="badge1"><img  src="/resources/account.png" class="pic" alt="logo"></span>
+            </p>
+          </div>
+         <textarea placeholder="Type message.." name="msg" required></textarea>
+         <a class="btnSend"><img  src="/resources/send.png" class="send" alt="logo"></a>
+       
+        </div>
+      </div>
+    </div>
+
+    <!--Store Item Content-->
+    <div class="containerHome">
+      <br><br><br>
+      <a href="/homePage.html" class="prev"> < Back </a>
+      <p class="name"><strong>Treats by Hanna</strong>
+      </p>
+      <p class="storeDesc"><blockquote>&nbsp;&nbsp;&nbsp;&nbsp;
+          <p class="desc">We offer you the best quality and freshly baked goods. <br>Enjoy every bite of our homemade delicacies!</p>
+          </blockquote><blockquote><blockquote><blockquote>
+          <p class="storeInfo">
+          <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30927.320059653524!2d120.9691513319751!3d14.316369442069208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d5d5ecf3bc7d%3A0x577f6a95c1159338!2sPaliparan%20III%2C%20Cavite!5e0!3m2!1sen!2sph!4v1616734626493!5m2!1sen!2sph" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paliparan Site, Paliparan III Dasmariñas City Cavite</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;
+          Store hours: Morning 6am-10am | Afternoon 2pm-5pm <br>&nbsp;&nbsp;&nbsp;&nbsp;
+          Category: Product <br>&nbsp;&nbsp;&nbsp;&nbsp;
+          Type: Baked Goods</p></blockquote></blockquote></blockquote>
+      </p>
+
+      <!--Button to open item1 modal-->
+      <a class="item1" onclick="openItem1()">
+        <div class="item">
+          <div class="column">
+            <img  src="/resources/prod1.jpg" class="prod1" alt="pic">
+          </div>
+          <div class="column">
+            <p class = "itemName">Ube Cheese Pandesal</p>
+            <p class="price">Price starts at: Php 75.00</p>
+          </div>
+        </div>
+      </a>
+
+        <!--Item1 Modal-->
+        <div class="modal_1" id="modal_1">
+          <div class="modal_item1" id="modal_item1">
+            <div class="container_Item1">
+              <a class="btnClose" onclick="closeItem1()">x</a><br>
+              <p class = "nameModal">Ube Cheese Pandesal</p>
+              <p class="infoModal"> Filled with real UBE and a generous amount of cheese inside.</p>
+              <p class="priceModal"> &#8369; 75.00</p>
+              <div class="row">
+                <div class=column1>
+                  <p class="variationModal"> 
+                    <label for="Variation">variation</label><br>
+                    <select name="Variation" id="Variation">
+                      <option value="P5">Pack A (5pcs)</option>
+                      <option value="P10">Pack B (10pcs)</option>
+                    </select>
+                  </p>
+                </div>
+                <div class=column2>
+                  <p class="quantity">
+                    <label for="quantity">quantity</label><br>
+                    <button class="sub">-</button>
+                    <label for="quantity" class="qty">1</label>
+                    <button class="add">+</button>
+                  </p>
+                </div>
+              </div>
+              <button class="addToCart">Add to Cart</button>
+
+            </div>
+          </div>
+        </div>
+
+      <!--Button to open item1 modal-->
+      <a class="item2" onclick="openItem2()">
+        <div class="item">
+          <div class="column">
+            <img  src="/resources/prod2.jpg" class="prod2" alt="pic">
+          </div>
+          <div class="column">
+            <p class = "itemName">Double Chocolate Brownies</p>
+            <p class="price">Price starts at: Php 160.00</p>
+          </div>
+        </div>
+      </a>
+
+      <!--Item2 Modal-->
+      <div class="modal_2" id="modal_2">
+        <div class="modal_item2" id="modal_item2">
+          <div class="container_Item2">
+            <a class="btnClose" onclick="closeItem2()">x</a><br>
+            <p class = "nameModal">Chocolate Brownies</p>
+            <p class="infoModal"> Fudgee and chewy brownies, with chocolate chip and nuts for toppings</p>
+            <p class="priceModal"> &#8369; 160.00</p>
+            <div class="row">
+              <div class=column1>
+                <p class="variationModal"> 
+                  <label for="Variation">variation</label><br>
+                  <select name="Variation" id="Variation">
+                    <option value="P5">Half Tray (12pcs)</option>
+                    <option value="P10">One Tray (24pcs)</option>
+                  </select>
+                </p>
+              </div>
+              <div class=column2>
+                <p class="quantity">
+                  <label for="quantity">quantity</label><br>
+                  <button class="sub">-</button>
+                  <label for="quantity" class="qty">1</label>
+                  <button class="add">+</button>
+                </p>
+              </div>
+            </div>
+            <button class="addToCart">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <script>
+    function openCart() {
+      document.getElementById("modal_3").style.display = "block";
+    }
+
+    function closeCart() {
+      document.getElementById("modal_3").style.display = "none";
+    }
+
+    function openItem1() {
+      document.getElementById("modal_1").style.display = "block";
+    }
+
+    function openItem2() {
+      document.getElementById("modal_2").style.display = "block";
+    }
+
+    function closeItem1() {
+      document.getElementById("modal_1").style.display = "none";
+    }
+
+    function closeItem2() {
+      document.getElementById("modal_2").style.display = "none";
+    }
+
+    function openChat() {
+      document.getElementById("chat-popup").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("chat-popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
