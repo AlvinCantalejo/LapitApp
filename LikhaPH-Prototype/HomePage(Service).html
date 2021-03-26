@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Lapit | Home Page</title>
+</head>
+<body> 
+
+    <div class="sidenav">
+        <img  src="logo.png" class="homeLogo" alt="logo"><br><br><br>
+        <a href="HomePage.html"><strong>Store Nearby</strong></a>
+        <a href="CreateStore.html">Create Store</a>
+        <a href="">Settings</a>
+        <br><br><br><br><br><br><br><br><br><br>
+        <a href="index.html">Logout</a>
+      </div>
+
+  <div class="sidenavRight">
+    <a class="account" onclick="openChat()"><img  src="account.png" class="imgAccount" alt="logo"></a>
+    <a class="cartHome" onclick="openCart()"><img  src="cart.png" class="imgCart" alt="logo"></a>
+  </div>
+
+  <!--Account Modal-->
+  <div class="modal_Account" id="modal_Account">
+    <div class="account-popup" id="account-popup">
+      <div class="contAccount">
+        <a class="btnClose" onclick="closeForm()">x</a><br>
+        <h2>&nbsp;&nbsp;&nbsp;Account Profile</h2>
+        <div class="accountInfo">
+          <img  src="addProfile.png" class="imgProfile" alt="logo"><br>
+          <strong>Hannielle Valle</strong><br>
+          User Type: Buyer <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Store nearby container-->
+  <div class="containerHome">
+    <p class="storeNearby"><strong>Stores nearby</strong></p>
+    <div class="row">
+      <div class=column1b>
+        <p class="dropdown">
+          <label for="Category">Category:</label><br>
+          <select name="Category" id="Category">
+            <option value="All">All</option>
+            <option value="Product">Products</option>
+            <option value="Service" selected>Services</option>
+          </select>
+        </p>
+      </div>
+      <div class=column2b>
+        <p class="dropdown">
+          <label for="Type">Type:</label><br>
+          <select name="Type" id="Type">
+            <option value="All" selected>All</option>
+            <option value="Computer Repair">Computer Repair</option>
+            <option value="Key Duplicate">Key Duplicate</option>
+            <option value="Shoe Repair">Shoe Repair</option>
+            <option value="Payong Repair">Payong Repair</option>
+            <option value="Payong Repair">Watch Repair</option>
+            <option value="Hair Cut and Treatment">Hair Cut and Treatment</option>
+            <option value="ServiceOthers">Others</option>
+          </select>
+        </p>
+      </div>
+      <div class=column3>
+        <br><br><br>
+        <a href="" class="go">Go</a>
+      </div>
+    </div>
+  
+
+    <!--Collapsible-->
+
+    <div class ="listScroll">
+      <button type="button" class="collapsible">
+      <p class="storeName"><strong>Alvin's Computer Work</strong><br></p>
+      <p class="storeDesc"><em>San Marino City, Paliparan III Dasmariñas City Cavite</em></p></button>
+      <div class="contentCollapsible">
+        <p>Computer service ba ang hanap mo? Tamang tama ang na browse mo. I guarantee you a profesional level of service.<br>
+        Store hours: 10am-8pm <br>
+        Category: Services <br>
+        Type: Computer Repair
+        <br><a href="StoreItems(Service).html" class="view"> View Store ></a>
+        </p>
+      </div>
+
+      <button type="button" class="collapsible">
+        <p class="storeName"><strong>Mj's Watch Repair</strong><br></p>
+        <p class="storeDesc"><em>Paliparan Site, Paliparan III Dasmariñas City Cavite</em></p></button>
+        <div class="contentCollapsible">
+          <p>We offer you quality service sa murang halaga. Ito na ang tamang oras, mag pa-repair kana!<br>
+          Store hours: 10am-5pm <br>
+          Category: Services <br>
+          Type: Key Duplicate
+          <br><a href="" class="view"> View Store ></a>
+          </p>
+        </div>
+
+      <button type="button" class="collapsible">
+        <p class="storeName"><strong>Nail and Spa by Lynne</strong><br></p>
+        <p class="storeDesc"><em>San Marino City, Paliparan III Dasmariñas City Cavite</em></p></button>
+        <div class="contentCollapsible">
+          <p>Wala nang ibang hahanapin pa sa serbisyo naming all-out! Feel the "Doña-vibe" sa murang halaga. Book now! <br>
+          Store hours: 10am-6pm <br>
+          Category: Services <br>
+          Type: Others
+          <br><a href="" class="view"> View Store ></a>
+          </p>
+        </div>
+
+      <button type="button" class="collapsible">
+        <p class="storeName"><strong>Hanna's Salon</strong><br></p>
+        <p class="storeDesc"><em>Mabuhay, Paliparan III Dasmariñas City Cavite</em></p></button>
+        <div class="contentCollapsible">
+            <p>All-in-one ba ang hanap mo? Try mo dito sis! Magiging PAK na PAK ang beauty mo from head to toe.<br>
+            Store hours: 8am-5pm <br>
+            Category: Services <br>
+            Type: Hair Cut and Treatment
+            <br><a href="" class="view"> View Store ></a>
+            </p>
+        </div>
+
+      
+    </div>
+    
+  </div>
+  <script>
+    function openChat() {
+      document.getElementById("account-popup").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("account-popup").style.display = "none";
+    }
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
